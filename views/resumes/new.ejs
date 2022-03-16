@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+</head>
+<body>
+    <h1 class="col-md-6 offset-md-5 mt-3">Add my Resume</h1>
+    <div class="col-md-6 offset-md-3 mt-3">
+        <form action="/resumes" method="POST" autocomplete="off">
+            <div class="mb-3 mt-3">
+                <label class="form-label" for="name">Name:</label>
+                <input class="form-control" type="text" id="name" name="name" required autocomplete="off">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label" for="dob">Date Of Birth:</label>
+                <input class="form-control" type="date" id="dob" name="dob" required autocomplete="off">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label" for="email">Email:</label>
+                <input class="form-control" type="text" id="email" name="email" required autocomplete="off">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="education">Educational Qulification:</label>
+                <select class="form-select" id="education" name="education" required autocomplete="off">
+                  <option selected>Choose...</option>
+                  <option value="under-graduate">Under-Graduate</option>
+                  <option value="graduate">Graduate</option>
+                  <option value="post-graduate">Post-Graduate</option>
+                </select>
+              </div>
+            <div class="mb-3 mt-3">
+                <label class="form-label" for="experience">Experience in Years:</label>
+                <input class="form-control" type="number" id="experience" name="experience" required autocomplete="off">
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="skills">Skills:</label>
+                <select class="form-select" id="skills" name="skills" required autocomplete="off">
+                  <option selected>Choose...</option>
+                  <option value="programmer">Programmer</option>
+                  <option value="developer">Developer</option>
+                  <option value="data-analyst">Data-Analyst</option>
+                </select>
+              </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Make Resume</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>

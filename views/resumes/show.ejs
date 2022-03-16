@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= resume.name %> </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+</head>
+<body>
+    <h1 class="col-md-6 offset-md-5 mt-3"><%= resume.name %></h1>
+    <div class="col-md-6 offset-md-7"><b>DOB:</b> <%=resume.dob%></div>
+    <div class="col-md-6 offset-md-7"><b>Email:</b> <%=resume.email%></div>
+    <br>
+    <!-- <div class="col-md-6 offset-md-4"><b>Educational Qulaification:</b> <%=resume.education%></div> -->
+    <table class="col-md-6 offset-md-4">
+        <tr>
+            <td><b>Educational Qulaification:</b></td>
+            <td><%=resume.education%> </td>
+        </tr>
+        <tr>
+            <td><b>Work Experience:</b></td>
+            <td><%=resume.experience%> years</td>
+        </tr>
+        <tr>
+            <td><b>Skill:</b></td>
+            <td><a href="/resumes?skills=<%=resume.skills%>"><%=resume.skills%></a></td>
+        </tr>
+    </table>
+    <br>
+    <!-- <div class="col-md-6 offset-md-4"><b>Work Experience:</b> <%=resume.experience%> years</div>
+    <div class="col-md-6 offset-md-4"><b>Skill:</b> <%=resume.skills%></div> -->
+    <a class="col-md-6 offset-md-5 mt-3" href="/resumes">All Resumes</a>
+    <div>
+        <a class="col-md-6 offset-md-5 mt-3" href="/resumes/<%= resume._id %>/edit">Edit Resume</a>
+    </div>
+    <form action="/resumes/<%=resume._id%>?_method=DELETE" method="POST">
+        <div class="col-md-6 offset-md-5 mt-3">
+            <button class="btn btn-danger">Delete Resume</button>
+        </div>
+    </form>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>

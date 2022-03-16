@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Resumes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/resumes">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/resumes/new">New Resume</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://en.m.wikipedia.org/wiki/R%C3%A9sum%C3%A9">Details</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/resumes?skills=programmer">Programmers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/resumes?skills=developer">Developers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/resumes?skills=data-analyst">Data-Analysts</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div>
+        <h1 class="col-md-6 offset-md-5 mt-3"><%=skills%>'s Resumes!</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <img src="https://media.istockphoto.com/photos/top-view-of-stack-of-resume-filesmagnifier-on-black-surfaceconcept-of-picture-id1138817616" alt="resume" height="500" width="500">
+                </div>
+                <div class="col-4">
+                    <ul>
+                        <% for(let resume of resumes) { %>
+                            <li><a href="/resumes/<%= resume._id %>"><%= resume.name %></a> </li>
+                        <% } %>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>
